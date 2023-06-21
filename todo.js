@@ -11,7 +11,7 @@ addingButton.addEventListener('click', function(e){
     e.preventDefault();
 
     /* Create all the elements */
-    if(input.value.trim()){
+    if(input.value.trim()){  //to remove white spaces from both the end of the  string
         /* UL Tag */
         var ulTag = document.createElement('ul');
         ulTag.classList.add('todo-list-container');
@@ -31,7 +31,7 @@ addingButton.addEventListener('click', function(e){
         completeButton.innerHTML = '<i class="fas fa-check"></i>';
         /* Edit Button */
         var editBtn = document.createElement('button');
-        editBtn.innerHTML = '<i class="far fa-edit"></i>';
+        editBtn.innerHTML = '<i class="far fa-edit" style="color:black"></i>';
         editBtn.classList.add('editBtn');
         editBtn.onclick = function(){
             editWorking(liTag);
@@ -39,7 +39,7 @@ addingButton.addEventListener('click', function(e){
         /* trash button element2 */
         var trashButton = document.createElement('button');
         trashButton.classList.add('trash');
-        trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+        trashButton.innerHTML = '<i class="fas fa-trash "></i>';
     
         /* Appending Elements into each other */
         ulTag.appendChild(todoList);
@@ -67,7 +67,7 @@ addingButton.addEventListener('click', function(e){
                 var todo = items.parentElement;
                 var todo2 = todo.parentElement;
                 todo2.classList.add('fall');
-                todo2.addEventListener('transitionend', function(){
+                todo2.addEventListener('transitionend', function(){ //ISME aisa hai css wale transition ke baad hat jayega item
                     var todo3 = todo2.parentElement;
                     todo3.remove();
                 });
@@ -80,8 +80,8 @@ addingButton.addEventListener('click', function(e){
 
 
 function editWorking(e){
-    var editValue = prompt('edit the select item', e.firstChild.nodeValue);
-    e.firstChild.nodeValue = editValue;
+    var editValue = prompt('edit the select item',  );
+    e.firstChild.nodeValue = editValue; //edit wale ke baad jo apna input area hai usse input pakad rhe hai
 }
 function deleteAllElements(){
     var gettingUlTag = document.querySelectorAll('.todo-list-container');

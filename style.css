@@ -7,7 +7,7 @@
 }
 body{
     background: rgb(193,62,62);
-    background: linear-gradient(139deg, rgba(193,62,62,1) 0%, rgba(230,179,50,1) 100%);
+    background: linear-gradient(180deg , rgb(100, 149, 237,1) 0%, rgb(159, 226, 191,1) 100%);
     overflow-x: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,7 +22,7 @@ body{
     margin: 0 auto;
     height: auto;
 }
-#todos > .heading{
+#todos > .heading{  /*isse jo sirf direct children hoge woh select hoge*/
     margin-bottom: 30px;
     text-align: center;
 }
@@ -30,7 +30,7 @@ body{
     display: inline-block;
     position: relative;
     text-transform: uppercase;
-    font-size: 2.5rem;
+    font-size: 2.5rem; /*parent element ke font size se set ho rha hai ye*/
 }
 #todos > .heading > h1::before{
     content: '';
@@ -87,6 +87,7 @@ body{
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
+    border: solid 2px black;
 }
 #todos > .todo-list-container .todo-list .todo-item{
     width: 100%;
@@ -100,20 +101,26 @@ body{
 #todos > .todo-list-container .todo-list .button{
     position: absolute;
     right: 0;
+    
 }
 #todos > .todo-list-container .todo-list .button button{
     width: 40px;
     height: 50px;
     border: none;
     color: white;
-    outline: none;
     cursor: pointer;
 }
 #todos > .todo-list-container .todo-list .button .completed{
     background-color: #3ec282;
+    border: solid black 2px;
+
 }
 #todos > .todo-list-container .todo-list .button .trash{
-    background-color: #e72727;
+    background-color: #ff1100;
+    border: solid black ;
+    border-width: 2px 0px 2px 2px;
+
+
 }
 
 #todos > .todo-list-container .todo-list .button button i{
@@ -131,7 +138,8 @@ body{
 }
 
 .editBtn{
-    background-color: rgb(86, 62, 193);
+    background-color: rgb(242, 255, 0);
+    border: 10px solid black;
 }
 
 @media screen and (max-width: 600px){
